@@ -15,6 +15,7 @@ public class Korean {
     }
 
     public Korean(int age){
+        this("세종대왕", "990106-1000006");
         this.age = age;
     }
     public Korean(String name, String ssn){

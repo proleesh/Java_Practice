@@ -19,8 +19,8 @@ public class KoreanExample {
                 ", 주민 번호: " + k3.ssn + ", 국적: "
                 + k3.nation + ", 나이: " + k3.age);
 
-        Korean k4 = new Korean();
-//        System.out.println(k4.age);
+        Korean k4 = new Korean(20);
+        System.out.println("이름: " + k4.name);
 
         Korean k5 = new Korean(18);
         k5.name = "김수로";
