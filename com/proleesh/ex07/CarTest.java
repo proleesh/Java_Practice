@@ -8,7 +8,7 @@ class Car{
     public Car(String color) {
         Car.color = color;
         cnt++;
-        if(Car.color != null && (color.equals("RED") || Car.color.equals("red"))){
+        if(Car.color != null && (Car.color.equals("RED") || Car.color.equals("red"))){
             cnt2++;
         }
     }
