@@ -1,7 +1,5 @@
 package com.proleesh.ex08;
 
-import java.sql.SQLOutput;
-
 public class Parents {
     String name;
     int age;
