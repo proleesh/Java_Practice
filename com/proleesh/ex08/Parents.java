@@ -6,7 +6,9 @@ public class Parents {
     String name;
     int age;
 
-    public Parents(){}
+    public Parents(){
+        System.out.println("부모의 기본 생성자 호출 성공!");
+    }
 
     public Parents(String name, int age) {
         this.name = name;
