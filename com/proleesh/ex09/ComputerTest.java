@@ -7,5 +7,8 @@ public class ComputerTest {
         Calculator calculator = new Calculator();
         System.out.println("원 면적: "+calculator.areaCircle(r));
         System.out.println();
+        Computer c = new Computer();
+        System.out.println("원 면적: "+c.areaCircle(r));
+        System.out.println();
     }
 }
