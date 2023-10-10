@@ -11,12 +11,15 @@ public abstract class Phone {
         this.broadcast = broadcast;
     }
 
-    void turnOn(){
-        System.out.println("폰이 켜진다.");
-    }
-    void turnOff(){
-        System.out.println("폰이 꺼진다.");
-    }
+//    void turnOn(){
+//        System.out.println("폰이 켜진다.");
+//    }
+//    void turnOff(){
+//        System.out.println("폰이 꺼진다.");
+//    }
+    abstract void turnOn();
+    abstract void turnOff();
+
 
     public String getOwner() {
         return owner;
