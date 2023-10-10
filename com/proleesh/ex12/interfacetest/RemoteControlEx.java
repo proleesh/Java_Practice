@@ -16,5 +16,9 @@ public class RemoteControlEx {
         rc = new Robot();
         rc.turnOn();
 
+        System.out.println(RemoteControl.MAX_VOLUME);
+        System.out.println(RemoteControl.MIN_VOLUME);
+
+
     }
 }
