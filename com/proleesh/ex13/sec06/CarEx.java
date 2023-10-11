@@ -13,5 +13,11 @@ public class CarEx {
         car.run();
         car.stop();
 
+        Drive drive = new Drive();
+        drive.Driver(new BMW());
+        drive.Driver(new Benz());
+
+
+
     }
 }
