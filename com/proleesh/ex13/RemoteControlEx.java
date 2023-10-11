@@ -10,5 +10,12 @@ public class RemoteControlEx {
         rc.setMute(true);
         rc.setMute(false);
         rc.turnOff();
+
+        rc = new Audio();
+        rc.turnOn();
+        rc.setVolume(8);
+        rc.setMute(true);
+        rc.setMute(false);
+        rc.turnOff();
     }
 }
