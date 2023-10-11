@@ -9,6 +9,12 @@ public class Car {
 
     void run(){
         System.out.println("작동 시작");
+        System.out.println("앞바퀴");
+        t1.roll();
+        t2.roll();
+        System.out.println("뒤바퀴");
+        t3.roll();
+        t4.roll();
     }
 
     void stop(){
