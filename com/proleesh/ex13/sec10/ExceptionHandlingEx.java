@@ -7,6 +7,7 @@ public class ExceptionHandlingEx {
             System.out.println("문자 수: " + result);
         }catch(NullPointerException e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
