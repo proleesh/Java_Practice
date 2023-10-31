@@ -16,5 +16,13 @@ public class SubTypeExample {
         Player.addRecommendedContent(musicList);
 
         Player.play(musicList);
+
+        List<Movie> movieList = new ArrayList<>();
+        movieList.add(new Movie("Sex city"));
+        movieList.add(new Movie("Top Gun"));
+        movieList.add(new Movie("Mission impossible"));
+
+        Player.addFavoriteContent(movieList);
+        Player.play(movieList);
     }
 }

@@ -14,4 +14,9 @@ public class Player {
         Music music = new Music("Everything~");
         playList.add(music);
     }
+
+    public static void addFavoriteContent(List<? super Movie> playList){
+        Movie movie = new Movie("Once upon a time in America");
+        playList.add(movie);
+    }
 }
