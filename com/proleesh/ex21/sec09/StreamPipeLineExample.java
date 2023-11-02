@@ -21,9 +21,19 @@ public class StreamPipeLineExample {
 
         // 방법 2
         double avg = list.stream()
-                        .mapToInt(student->student.getScore())
+                        .mapToInt(Student::getScore)
                                 .average()
                                         .getAsDouble();
         System.out.println("평균 점수: " + avg);
+
+        System.out.print("이름: ");
+        list.stream().map(Student::getName)
+                .forEach(name -> System.out.print(name + " "));
+
+        System.out.println();
+
+        System.out.print("점수: ");
+        list.stream().mapToInt(Student::getScore)
+                .forEach(score -> System.out.print(score + " "));
     }
 }
