@@ -1,9 +1,6 @@
 package com.proleesh.ex24.sec04;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 
 public class CopyExample {
     public static void main(String[] args) throws Exception {
@@ -11,6 +8,8 @@ public class CopyExample {
         String targetFileName = "/Users/sunghyuklee/WriteEx2.txt";
 
         InputStream is = new FileInputStream(originalFileName);
+        InputStreamReader reader = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(reader);
         OutputStream os = new FileOutputStream(targetFileName);
 
         byte[] data = new byte[1024];
