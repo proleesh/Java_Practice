@@ -1,4 +1,4 @@
-package com.proleesh.ex25.sed02;
+package com.proleesh.ex25.sec02;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
