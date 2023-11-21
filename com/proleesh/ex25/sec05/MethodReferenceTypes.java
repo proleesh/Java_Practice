@@ -1,5 +1,6 @@
 package com.proleesh.ex25.sec05;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -10,6 +11,7 @@ public class MethodReferenceTypes {
         boundMethodReferences();
         unboundMethodReferences();
         staticMethodReference();
+        constructorMethodReferences();
     }
 
 
@@ -57,5 +59,29 @@ public class MethodReferenceTypes {
         sortMR.accept(listOfNumbers);
         System.out.println(listOfNumbers);
 
+    }
+
+    public static void constructorMethodReferences(){
+        Supplier<StringBuilder> sbL = () -> new StringBuilder();
+        Supplier<StringBuilder> sbMR = StringBuilder::new;
+
+        StringBuilder sb1 = sbL.get();
+        sb1.append("lambda version");
+        System.out.println(sb1);
+
+        StringBuilder sb2 = sbMR.get();
+        sb2.append("method reference version");
+        System.out.println(sb2);
+
+        Function<Integer, List<String>> alL = x -> new ArrayList<>(x);
+        Function<Integer, List<String>> alMR = ArrayList::new;
+        List<String> ls1 = alL.apply(10); // size 10
+        ls1.add("21");
+        ls1.add("22");
+        System.out.println(ls1);
+        List<String> ls2 = alMR.apply(5); // size 5
+        ls2.add("88");
+        ls2.add("89");
+        System.out.println(ls2);
     }
 }
