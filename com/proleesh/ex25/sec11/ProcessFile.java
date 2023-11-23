@@ -6,6 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * 스트림의 특징
+ * 1. 데이터를 담고 있는 저장소(collections)이 아니다.
+ * 2. 스트림은 원본 데이터 소스를 변경하지 않는다.즉 read only
+ * 3. 스트림은 iterator 처럼 일회용이다. (필요하면 다시 스트림을 생성해야 함)
+ * 4. 최종 연산 전까지 중간연산을 수행되지 않는다.(lazy)
+ * 5. 무제한 일 수도 있다. (Short Circuit 메소드를 사용하여 제한할 수 있다.)
+ * 6. 손쉽게 병렬 처리할 수 있다. (멀티 쓰레드 사용)
+ * 7. 기본형 스트림으로 IntStream, LongStream, DoubleStream등 제공
+ *  오토박싱 등의 불필요한 과정이 생략됨.
+ *  Stream<Integer> 대신에 IntStream을 사용하는게 더 효율적이다.
+ */
 class Cat{
     private String name, colour;
 
