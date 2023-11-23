@@ -1,9 +1,7 @@
 package com.proleesh.ex25.sec11;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamTest {
@@ -27,6 +25,21 @@ public class StreamTest {
                 .entrySet()
                 .stream()
                 .count());
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
+        Stream<Integer> infStream = Stream.generate(()->{
+            return (int) (Math.random() * 45 + 1);
+        });
+        infStream.limit(6)
+                .forEach(s -> System.out.print(s + " "));
+
+        System.out.println();
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
+
+        Stream<Integer> infStream2 = Stream.iterate(2, n -> n + 2);
+
+        infStream2.limit(10).forEach(System.out::println);
+
 
     }
 }
