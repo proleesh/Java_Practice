@@ -1,5 +1,6 @@
 package com.proleesh.ex25.sec13;
 
+import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.DoubleStream;
@@ -27,6 +28,21 @@ public class PrimitiveStreamTest2 {
 
         OptionalDouble average = LongStream.of(10L, 20L, 30L).average();
         System.out.println(average.orElseGet(Math::random));
+        stats(IntStream.of(5,10,15,20));
+        stats(IntStream.empty());
+    }
 
+    private static void stats(IntStream intStream) {
+        IntSummaryStatistics intStats = intStream.summaryStatistics();
+        int min = intStats.getMin();
+        System.out.println(min);
+        int max = intStats.getMax();
+        System.out.println(max);
+        double avg = intStats.getAverage();
+        System.out.println(avg);
+        long count = intStats.getCount();
+        System.out.println(count);
+        long sum = intStats.getSum();
+        System.out.println(sum);
     }
 }
