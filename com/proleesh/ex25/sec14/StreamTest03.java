@@ -1,7 +1,5 @@
 package com.proleesh.ex25.sec14;
 
-import com.proleesh.ex13.sec05.A;
-
 import java.util.ArrayList;
 import java.util.List;
 
