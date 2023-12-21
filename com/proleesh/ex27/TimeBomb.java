@@ -15,7 +15,7 @@ class CountDown implements Runnable{
 }
 public class TimeBomb {
     public static void main(String[] args) {
-        Thread timer = new Thread(new CountDown());
+        Thread timer = new Thread(new CountDown_());
         System.out.println("Starting 10 seconds count down... ");
         timer.start();
         System.out.println("Boom!!!");
