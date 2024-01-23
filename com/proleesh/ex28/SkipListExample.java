@@ -1,5 +1,6 @@
 package com.proleesh.ex28;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -30,6 +31,12 @@ public class SkipListExample {
 
         for(Integer value:map.values()){
             System.out.println(value);
+        }
+
+        Map<String, Integer> mapSync = Collections.synchronizedMap(map);
+
+        for(String k : mapSync.keySet()){
+            System.out.println(k + " -> " + mapSync.get(k) + ". Thread id:" + Thread.currentThread().getId());
         }
 
     }
