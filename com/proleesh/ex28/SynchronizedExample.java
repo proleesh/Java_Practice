@@ -6,7 +6,7 @@ public class SynchronizedExample {
 
 
     public void addToCounter(){
-        synchronized (this) {
+        synchronized (lock) {
             int c = count;
             System.out.println("Before. " + count + ". Thread name: " + Thread.currentThread().getName());
             count = c + 1;
