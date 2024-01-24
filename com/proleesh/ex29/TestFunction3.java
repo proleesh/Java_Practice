@@ -7,21 +7,30 @@ import java.util.function.Supplier;
 
 public class TestFunction3 {
     public static void main(String[] args) {
-        // 제공: supplier 함수 정의
-        Supplier<String> supplier = () -> "48";
-        // 예언: 값이 숫자가 맞는지 predicate 로
-        Predicate<String> isNumber = str -> str.matches("-?\\d+(\\.\\d)?");
-        // convert
-        Function<String, Integer> change = Integer::parseInt;
-        // print
-        Consumer<Integer> consumer = i -> {
-            if(i % 2 == 0){
-                System.out.println("짝수 : " + i);
-            }else{
-                System.out.println("홀수 : " + i);
-            }
-        };
+//        // 제공: supplier 함수 정의
+//        Supplier<String> supplier = () -> "48";
+//        // 예언: 값이 숫자가 맞는지 predicate 로
+//        Predicate<String> isNumber = str -> str.matches("-?\\d+(\\.\\d)?");
+//        // convert
+//        Function<String, Integer> change = Integer::parseInt;
+//        // print
+//        Consumer<Integer> consumer = i -> {
+//            if(i % 2 == 0){
+//                System.out.println("짝수 : " + i);
+//            }else{
+//                System.out.println("홀수 : " + i);
+//            }
+//        };
 
+        checkNum(()-> "32", str -> str.matches("-?\\d+(\\.\\d)?"), Integer::parseInt, i -> {
+            if (i % 2 != 0) System.out.println("홀수");
+            else System.out.println("짝수");
+        });
+
+
+
+    }
+    private static void checkNum(Supplier<String> supplier, Predicate<String> isNumber, Function<String, Integer> change, Consumer<Integer> consumer){
         if(isNumber.test(supplier.get())){
             /**
              * String s = supplier.get();
@@ -34,7 +43,5 @@ public class TestFunction3 {
             // 숫자가 아님
             System.out.println("숫자가 아니다.");
         }
-
-
     }
 }
