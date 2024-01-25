@@ -36,7 +36,10 @@ public class StreamEx2 {
         );
 
         list.stream()
-                .filter(p -> p.age  > 23)
+                .filter(p -> {
+                    System.out.println("filter: " + p.hashCode());
+                    return  p.age > 23;
+                })
                 .map(p -> p.name)
                 .forEach(s -> System.out.println(s.toString()));
     }
