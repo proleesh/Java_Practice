@@ -1,5 +1,7 @@
 package com.proleesh.ex30;
 
+import com.proleesh.ex13.sec05.B;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -22,9 +24,11 @@ public class BankService {
 
     public static void main(String[] args) {
 //        bank.retrieveOne();
-//        bank.retrieveAll();
+        bank.retrieveAll();
 //        bank.deleteOne();
-        bank.deleteAll();
+//        bank.deleteAll();
+//        bank.add();
+//        bank.update();
     }
 
     public void retrieveOne() {
@@ -48,6 +52,30 @@ public class BankService {
 
     public void deleteAll(){
         bank.deleteAllAccounts();
+    }
+
+    public void add(){
+        int nRows = bank.addBankAccount(
+                new BankAccount("19234153", "24242424", "왕건", "개성시", 100)
+        );
+        if(nRows == 1){
+            System.out.println("Add OK: " + nRows);
+        }else{
+            System.out.println("Add error: " + nRows);
+        }
+    }
+    public void update(){
+        BankAccount accountDetails = bank.getAccountDetails("19234153", "24242424");
+        System.out.println("BEFORE Update: " + accountDetails);
+        accountDetails.setCustName("김일성");
+        accountDetails.setCustAddress("평양");
+        int nRows = bank.updateBankAccount(accountDetails);
+        if(nRows == 1){
+            System.out.println("Update OK: " + nRows);
+            System.out.println("AFTER Update: " + bank.getAccountDetails("19234153", "24242424"));
+        }else{
+            System.out.println("Add error: " + nRows);
+        }
     }
     public BankAccount getAccountDetails(String branchCode, String accountNo) {
         String selectSQL = "SELECT * FROM BANK_TABLE WHERE (BRANCH_CODE = ? AND ACCOUNT_NUMBER = ?)";
@@ -127,5 +155,43 @@ public class BankService {
             System.err.println("SQLException in deleteAllAccounts()");
             e.printStackTrace();
         }
+    }
+
+    public int addBankAccount(BankAccount bankAccount){
+        int nRows = -1;
+        String insertSQL = "INSERT INTO BANK_TABLE (BRANCH_CODE, ACCOUNT_NUMBER, CUST_NAME, CUST_ADDRESS, BALANCE)"
+                + "VALUES (?,?,?,?,?)";
+        try(PreparedStatement ps = con.prepareStatement(insertSQL)){
+            ps.setString(1, bankAccount.getBranchCode());
+            ps.setString(2, bankAccount.getAccountNo());
+            ps.setString(3, bankAccount.getCustName());
+            ps.setString(4, bankAccount.getCustAddress());
+            ps.setDouble(5, bankAccount.getBalance());
+            nRows = ps.executeUpdate();
+        }catch (SQLException e){
+            System.err.println("SQLException in addBankAccount()");
+            e.printStackTrace();
+        }
+        return nRows;
+    }
+
+    public int updateBankAccount(BankAccount bankAccount){
+        int nRows = -1;
+        String updateSQL = "UPDATE BANK_TABLE SET CUST_NAME=?, CUST_ADDRESS=?, BALANCE=? "
+                + "WHERE (BRANCH_CODE = ? AND ACCOUNT_NUMBER=?)";
+
+        try(PreparedStatement ps = con.prepareStatement(updateSQL)){
+            ps.setString(1, bankAccount.getCustName());
+            ps.setString(2, bankAccount.getCustAddress());
+            ps.setDouble(3, bankAccount.getBalance());
+            ps.setString(4, bankAccount.getBranchCode());
+            ps.setString(5, bankAccount.getAccountNo());
+            nRows = ps.executeUpdate();
+        }catch(SQLException e){
+            System.err.println("SQLException in updateBankAccount()");
+            e.printStackTrace();
+            return nRows;
+        }
+        return nRows;
     }
 }
