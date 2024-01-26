@@ -1,7 +1,5 @@
 package com.proleesh.ex30;
 
-import com.proleesh.ex13.sec05.B;
-
 import java.sql.*;
 import java.util.ArrayList;
 
