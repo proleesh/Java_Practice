@@ -22,7 +22,9 @@ public class BankService {
 
     public static void main(String[] args) {
 //        bank.retrieveOne();
-        bank.retrieveAll();
+//        bank.retrieveAll();
+//        bank.deleteOne();
+        bank.deleteAll();
     }
 
     public void retrieveOne() {
@@ -35,6 +37,18 @@ public class BankService {
         }
     }
 
+    public void deleteOne(){
+        int nRows = bank.deleteBankAccount("123456", "12345678");
+        if(nRows == 1){
+            System.out.println("DELETE OK: " + nRows);
+        }else{
+            System.out.println("DELETE error: " + nRows);
+        }
+    }
+
+    public void deleteAll(){
+        bank.deleteAllAccounts();
+    }
     public BankAccount getAccountDetails(String branchCode, String accountNo) {
         String selectSQL = "SELECT * FROM BANK_TABLE WHERE (BRANCH_CODE = ? AND ACCOUNT_NUMBER = ?)";
         BankAccount bankAccount = null;
@@ -90,5 +104,28 @@ public class BankService {
         }
 
         return bankAccounts;
+    }
+
+    public int deleteBankAccount(String branchCode, String accountNo){
+        int nRows = -1;
+        String deleteSQL = "DELETE FROM BANK_TABLE WHERE (BRANCH_CODE=? AND ACCOUNT_NUMBER=?)";
+        try(PreparedStatement ps = con.prepareStatement(deleteSQL)){
+            ps.setString(1, branchCode);
+            ps.setString(2, accountNo);
+            nRows = ps.executeUpdate();
+        }catch(SQLException e){
+            System.err.println("SQLException in deleteBankAccount()");
+            e.printStackTrace();
+        }
+        return nRows;
+    }
+    public void deleteAllAccounts(){
+        String deleteSQL = "DELETE FROM BANK_TABLE";
+        try(PreparedStatement ps = con.prepareStatement(deleteSQL)){
+            ps.executeUpdate();
+        }catch(SQLException e){
+            System.err.println("SQLException in deleteAllAccounts()");
+            e.printStackTrace();
+        }
     }
 }
