@@ -10,10 +10,15 @@ public class FileInputEx {
 
         int readByte;
         int i = 0;
+        long start = 0, end = 0;
 
+        start = System.currentTimeMillis();
         while((readByte=is.read()) != -1){
             System.out.println("현재: " + ++i + " byte");
         }
+        end = System.currentTimeMillis();
+
+        System.out.println("사용시간(밀리초): " + (end - start) + "ms");
 
         is.close();
 
