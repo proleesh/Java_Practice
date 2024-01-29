@@ -13,6 +13,7 @@ public class FileInputEx2 {
         byte[] readBytes = new byte[20];
         int i = 0;
         while((readByteNo = is.read(readBytes)) != -1){
+            System.out.println("총 바이트 수: " + readByteNo);
             System.out.println("현재 " + ++i + " byte array store");
         }
 
