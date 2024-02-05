@@ -6,12 +6,13 @@ public class Calculator {
         op.setNumA(12);
         op.setNumB(24);
 
-        Adder add = new Adder();
         double numA = op.getNumA();
         double numB = op.getNumB();
+
+        Operation add = new Adder();
         System.out.println(numA + " + " + numB + " = " + add.operate(numA, numB));
 
-        Subtractor sub = new Subtractor();
+        Operation sub = new Subtractor();
         if(numA > numB) {
             System.out.println(numA + " - " + numB + " = " + sub.operate(numA, numB));
         }else {
