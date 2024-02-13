@@ -6,7 +6,7 @@ public class ConcretePrototype1 extends Prototype{
     }
 
     @Override
-    Prototype Clone() {
-        return new ConcretePrototype1(this.getId());
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

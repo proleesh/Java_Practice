@@ -1,6 +1,6 @@
 package com.proleesh.ex31.test09;
 
-public abstract class Prototype {
+public abstract class Prototype implements Cloneable{
     private String id;
 
     public Prototype(String id) {
@@ -10,5 +10,9 @@ public abstract class Prototype {
     public String getId() {
         return id;
     }
-    abstract Prototype Clone();
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
