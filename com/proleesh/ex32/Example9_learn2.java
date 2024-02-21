@@ -37,7 +37,7 @@ public class Example9_learn2 {
             int X2 = Integer.parseInt(st.nextToken());
             int Y2 = Integer.parseInt(st.nextToken());
 
-            int result = S[X2][Y2] - S[X1-1][Y2] - S[X2][Y1-1] + S[X1-1][Y1-1];
+            int result = S[X2][Y2] - S[X1 - 1][Y2] - S[X2][Y2 - 1] + S[X1 - 1][Y1 - 1];
             System.out.println(result);
         }
 
