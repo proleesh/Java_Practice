@@ -20,7 +20,7 @@ public class LambdaTest {
 //                return o1.compareTo(o2);
 //            }
 //        });
-        // 람다 클래스(Lambda Class) 사용시
+        // 람다 표현식(Lambda Expression) 사용시
         list.sort((Comparator<String>) (str1, str2) -> str1.compareTo(str2));
         System.out.println("After: " + list);
 
