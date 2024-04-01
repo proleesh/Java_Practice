@@ -16,6 +16,10 @@ public class ValidAnagram {
         str2 = "car";
         System.out.println(isAnagram(str1, str2));
 
+        str1 = "hotdogest";
+        str2 = "doghogtes";
+        System.out.println(isAnagram(str1, str2));
+
     }
 
     public boolean isAnagram(String s, String t){
@@ -27,8 +31,8 @@ public class ValidAnagram {
         for(char x : t.toCharArray()){
             count.put(x, count.getOrDefault(x, 0) - 1);
         }
-        for(int val : count.values()){
-            if(val != 0){
+        for(int v : count.values()){
+            if (v != 0) {
                 return false;
             }
         }
