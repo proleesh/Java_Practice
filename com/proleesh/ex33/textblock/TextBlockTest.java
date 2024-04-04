@@ -13,5 +13,11 @@ public class TextBlockTest {
                 Programmer
                 So Good!""";
         System.out.println(s2);
+
+        String s3 = """
+                Hello world
+                """;
+
+        System.out.println(s1.equals(s3));
     }
 }
