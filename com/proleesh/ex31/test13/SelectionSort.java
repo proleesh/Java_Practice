@@ -2,20 +2,23 @@ package com.proleesh.ex31.test13;
 
 public class SelectionSort {
     void main(){
-        int [] nums = {8, 6, 3, 2, 5, 4};
+//        int [] nums = {8, 6, 3, 2, 5, 4};
 
-        long startTime = System.currentTimeMillis();
+        int [] nums = new int[200000];
+        for(int i = 0; i < nums.length; i++){
+            nums[i] = (int) (Math.random() * 1000000);
+        }
+        long startTime = System.nanoTime();
         selectionSort(nums, nums.length);
-
+        long endTime = System.nanoTime();
 
         for(int i = 0; i < nums.length; ++i){
             System.out.print(STR."\{nums[i]} ");
         }
 
         System.out.println();
-        long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
-        System.out.println(elapsedTime);
+        System.out.println(elapsedTime / 1e9 + "초");
     }
 
     public void selectionSort(int[] A, int n){

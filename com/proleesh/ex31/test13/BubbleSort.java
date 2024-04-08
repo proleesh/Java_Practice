@@ -2,20 +2,23 @@ package com.proleesh.ex31.test13;
 
 public class BubbleSort {
     void main(){
-        int [] nums = {8, 5, 7, 3, 2};
+//        int [] nums = {8, 5, 7, 3, 2};
 //        int [] nums = {2,3,5,7,8};
-
-        long startTime = System.currentTimeMillis();
+        int[] nums = new int[200000];
+        for(int i = 0 ; i < nums.length ; i++){
+            nums[i] = (int)(Math.random()*1000000);
+        }
+        long startTime = System.nanoTime();
         BubbleSort(nums, nums.length);
+        long endTime = System.nanoTime();
 
         for(int i = 0; i < nums.length; i++){
             System.out.print(STR."\{nums[i]} ");
         }
-        long endTime = System.currentTimeMillis();
         System.out.println();
 
         long elapsedTime = endTime - startTime;
-        System.out.println(elapsedTime);
+        System.out.println(elapsedTime/1e9 + "초");
     }
     public static void BubbleSort(int[] nums, int n){
         int flag = 0;
