@@ -5,11 +5,17 @@ public class BubbleSort {
         int [] nums = {8, 5, 7, 3, 2};
 //        int [] nums = {2,3,5,7,8};
 
+        long startTime = System.currentTimeMillis();
         BubbleSort(nums, nums.length);
 
         for(int i = 0; i < nums.length; i++){
             System.out.print(STR."\{nums[i]} ");
         }
+        long endTime = System.currentTimeMillis();
+        System.out.println();
+
+        long elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime);
     }
     public static void BubbleSort(int[] nums, int n){
         int flag = 0;
