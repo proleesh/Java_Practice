@@ -1,7 +1,7 @@
 package com.proleesh.ex33.thread;
 
 public class ThreadTest10 {
-    void main(){
+    static public void main(String[] args){
         Object object = new Object();
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -14,7 +14,7 @@ public class ThreadTest10 {
                                 System.out.println(Thread.currentThread().getName() + " Watting Start...");
                                 object.wait(3000);
                             }catch(Exception e){
-                                e.printStackTrace();
+//                                e.printStackTrace();
                             }
                         }
                     }
@@ -25,7 +25,7 @@ public class ThreadTest10 {
         try {
             Thread.sleep(1000);
         }catch(Exception e){
-            System.out.println(t1.getName() + "status: " + t1.getState());
         }
+        System.out.println(t1.getName() + "status: " + t1.getState());
     }
 }
