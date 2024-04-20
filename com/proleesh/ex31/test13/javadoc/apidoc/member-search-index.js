@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.proleesh.ex31.test13.javadoc","c":"Test01","l":"age"},{"p":"com.proleesh.ex31.test13.javadoc","c":"DocTest01","l":"DocTest01()","u":"%3Cinit%3E()"},{"p":"com.proleesh.ex31.test13.javadoc","c":"DocTest01","l":"name"},{"p":"com.proleesh.ex31.test13.javadoc","c":"Test01","l":"Test01()","u":"%3Cinit%3E()"}];updateSearchResults();
