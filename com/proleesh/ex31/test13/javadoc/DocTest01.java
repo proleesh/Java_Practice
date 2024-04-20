@@ -6,7 +6,7 @@ package com.proleesh.ex31.test13.javadoc;
  * Copyright 2024 ~ present, Sung-Hyuk Lee<br>
  * This program is protected by copyright laws. <br>
  * @author sunghyuklee merci726@yahoo.com
- * @version 1.0
+ * @version 1.5
  *
  */
 public class DocTest01 {

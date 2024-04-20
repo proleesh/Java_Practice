@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.proleesh.ex31.test13.javadoc","l":"DocTest01"},{"p":"com.proleesh.ex31.test13.javadoc","l":"Test01"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.proleesh.ex31.test13.javadoc","l":"DocTest01"},{"p":"com.proleesh.ex31.test13.javadoc","l":"JavadocTagTest01"},{"p":"com.proleesh.ex31.test13.javadoc","l":"Test01"}];updateSearchResults();

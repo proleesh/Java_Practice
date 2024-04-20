@@ -6,16 +6,15 @@ package com.proleesh.ex31.test13.javadoc;
  * This program is protected by copyright laws. <br>
  * @author sunghyuklee merci726@yahoo.com
  * @version 1.5
+ *
  */
-public class Test01 {
+public class JavadocTagTest01 {
     /**
-     * member variable test
+     * 인사하는 메서드
+     * @param name 파라미터가 누구한테 인사하는지 지정
+     * @return 인사하는 문자열을 반환
      */
-    public int age;
-    /**
-     * Test01 no argument constructor
-     */
-    public Test01(){
-
+    public String hello(String name){
+        return name + ", 안녕!";
     }
 }
