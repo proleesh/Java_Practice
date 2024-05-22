@@ -29,6 +29,7 @@ public class ErrorDef {
     public static void main(String[] args) {
         ErrorDef errorDef = new ErrorDef();
         System.out.println(errorDef.getNum1()); // 12
+        System.out.println(ErrorDef.num2); // 10 Using class return value, because this value is a static variable.
         errorDef.setNum1(100);
         System.out.println(errorDef.getNum1()); // 100
         int num3 = num2;
