@@ -46,7 +46,12 @@ public class FieldTest {
 
         /*
         마지막 세개의 출력코드는 똑같이 나옵니다. 왜 이럴까요?
-        이유는 p2라는 변수가 직접 메모리상의 값을
+        이유는 p2라는 변수가 Person클래스 변환을 통해 직접 메모리상의 값을 수정한다.
+        이때 eyeNum이라는 class variable의 값은 완전히 새로운 값으로 바뀐다.
+        eyeNum은 실제로 Person class에 속하지 않는다. 즉 독립적인 존재로도 볼 수 있다.
+        그러므로 모든 Person class에 있는
+        instance variable(Member field but not contain about class variable)는 eyeNum에 접근이 가능하다.
+        이게 Java언어의 특징중 하나이다.
          */
 
     }
