@@ -5,8 +5,12 @@ public class RemoveElement {
         RemoveElement re = new RemoveElement();
 
         int[] arr1 = {3, 2, 2, 3};
-//        System.out.println(re.removeElement(arr1, 3));
-        System.out.println(re.removeElement(arr1, 2));
+        System.out.println(re.removeElement(arr1, 3)); // 2
+
+        int[] arr2 = {2, 5, 6, 6, 7, 2};
+        System.out.println(re.removeElement(arr2, 2)); // 4
+
+
     }
     public int removeElement(int[] nums, int val){
         int k = 0;
