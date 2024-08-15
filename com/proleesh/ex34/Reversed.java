@@ -5,6 +5,8 @@ public class Reversed {
         Reversed r = new Reversed();
         System.out.println(r.reverse(123));
         System.out.println(r.reverse(987654321));
+        System.out.println(r.reverse(-987654321));
+        System.out.println(r.reverse(-980));
 
 
     }
