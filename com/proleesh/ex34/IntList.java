@@ -8,6 +8,12 @@ public class IntList {
         first = f;
         rest = r;
     }
+    public int size(){
+        if(rest == null){
+            return 1;
+        }
+        return 1 + rest.size();
+    }
 
     public static void main(String[] args) {
 //        IntList list = new IntList();
@@ -19,6 +25,11 @@ public class IntList {
 //
 //        list.rest.rest = new IntList();
 //        list.rest.rest.first = 15;
-
+        IntList L = new IntList(15, null);
+        L = new IntList(10 , L);
+        L = new IntList(5, L);
+        System.out.println(L.first);
+        System.out.println(L.rest);
+        System.out.println(L.size());
     }
 }
