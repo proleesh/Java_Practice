@@ -15,6 +15,13 @@ public class IntList {
         return 1 + rest.size();
     }
 
+    public int get(int i){
+        if(i == 0){
+            return first;
+        }
+        return rest.get(i - 1);
+    }
+
     public static void main(String[] args) {
 //        IntList list = new IntList();
 //        list.first = 5;
@@ -31,5 +38,6 @@ public class IntList {
         System.out.println(L.first);
         System.out.println(L.rest);
         System.out.println(L.size());
+        System.out.println(L.get(1));
     }
 }
